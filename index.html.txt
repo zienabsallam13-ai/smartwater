@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة تحكم الري الذكي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌱 نظام الري الإلكتروني</h1>
+            <p>مرحباً زينب، حالة المزرعة الآن:</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>رطوبة التربة</h3>
+                <div class="value">45%</div>
+                <p>الحالة: جيدة</p>
+            </div>
+
+            <div class="card">
+                <h3>حالة المضخة</h3>
+                <div id="pumpStatus" class="status off">متوقفة</div>
+                <button onclick="togglePump()" class="btn">تشغيل يدوي</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePump() {
+            let status = document.getElementById('pumpStatus');
+            if (status.classList.contains('off')) {
+                status.innerText = "تعمل الآن";
+                status.classList.remove('off');
+                status.classList.add('on');
+            } else {
+                status.innerText = "متوقفة";
+                status.classList.remove('on');
+                status.classList.add('off');
+            }
+        }
+    </script>
+</body>
+</html>
